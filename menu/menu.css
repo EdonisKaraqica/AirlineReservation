@@ -1,4 +1,6 @@
+
   ul {
+
     list-style-type: none;
     margin-left:800px;
     width:400px;
@@ -8,7 +10,10 @@
     color: #ddd;
 }
 
- li {
+
+
+li {
+
     float: left;
 }
 
@@ -22,5 +27,6 @@
 }
 
  li a:hover {
+
     background-color: #111;
 }
