@@ -13,8 +13,4 @@
    	echo "succed";
    }
 
-   // $query = pg_query($db, "SELECT * FROM works ORDER BY id"); 
-
-   // print $query;
-
   ?>
