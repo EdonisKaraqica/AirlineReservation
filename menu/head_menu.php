@@ -33,31 +33,40 @@ li a:hover {
 }
 #menu {float: left;border-style: solid;width: 100%;position: relative; }
 
-.foto_icon{border-style: solid;width:40%;position: absolute;} 
+.foto_icon{width:3%;position: absolute;}
 
-.menu_f{width:50%;position: fixed; left:63%;}
+.title{width:10%;height:50px;position: fixed; left:4%; top :4%;}
+
+.menu_f{border-style:solid; width:50%;position: fixed; left:63%;}
+
 
 </style>
 </head>
 <body>
 
 <div id="menu">
-<div class="foto_icon">
-<img src="pic_mountain.jpg" alt="Mountain View" style="width:50px;height:50px;margin:10px">
-<p>KosovaAir</p>
-</div> 
-<div class="menu_f">
+	<div class="foto_icon">
+		<img src="http://www.clipartbest.com/cliparts/aTq/zgA/aTqzgAzXc.png" alt="Mountain View" style="width:50px;height:50px;margin:10px">
 
-<ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="info.html">Info</a></li>
-  <li><a href="#contact">Rezervimet</a></li>
-  <li><a href="#about">Orari i fluturimeve</a></li>
-  <li><a href="#about">Login</a></li>
+	</div>
 
-</ul>
+	<div class ="title">
+		KosovaAir 
+	</div>
 
-</div>
+	<div class="menu_f">
+
+	<ul>
+  		<li><a class="active" href="#home">Home</a></li>
+  		<li><a href="info.html">Info</a></li>
+  		<li><a href="#contact">Rezervimet</a></li>
+  		<li><a href="#about">Orari i fluturimeve</a></li>
+  		<li><a href="#about">Login</a></li>
+
+	</ul>
+
+	</div>
+
 </div>
 </body>
 </html>
