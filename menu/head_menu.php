@@ -37,7 +37,7 @@ li a:hover {
 
 .title{width:10%;height:50px;position: fixed; left:4%; top :4%;}
 
-.menu_f{border-style:solid; width:50%;position: fixed; left:63%;}
+.menu_f{width:50%;position: fixed; left:63%;}
 
 
 </style>
