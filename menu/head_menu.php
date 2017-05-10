@@ -57,8 +57,8 @@ li a:hover {
 	<div class="menu_f">
 
 	<ul>
-  		<li><a class="active" href="#home">Home</a></li>
-  		<li><a href="info.html">Info</a></li>
+  		<li><a class="active" href="home.php">Home</a></li>
+  		<li><a href="info.php">Info</a></li>
   		<li><a href="#contact">Rezervimet</a></li>
   		<li><a href="#about">Orari i fluturimeve</a></li>
   		<li><a href="#about">Login</a></li>
