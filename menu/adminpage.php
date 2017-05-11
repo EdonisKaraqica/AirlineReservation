@@ -20,7 +20,12 @@ w3IncludeHTML();
 
 .links {height:80%;width:15%;position: fixed; left:5%; top :12%;}
 
-.table {height:80%;width:76%;position: fixed; left:22%; top :12%;}
+.table {border-style: solid; height:80%;width:76%;position: fixed; left:22%; top :12%;}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
 div.vertical-line{
 	  top : 12%; left: 21%; 
@@ -55,7 +60,21 @@ div.vertical-line{
 	</div>
 
 	<div class="table">
-		<p style="font-size:60px; ">TABLE</p>
+				<div class="container">           
+  			<table style="width: 100%">
+   		 <thead>
+      <tr>
+      	<th>Data</th>
+        <th>Destinacioni</th>
+        <th>Nisja</th>
+        <th>Arritja</th>
+        <th>ID e fluturimi</th>
+
+      </tr>
+    	</thead>
+
+  </table>
+</div>
 	</div>
 
 

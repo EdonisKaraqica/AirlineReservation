@@ -60,7 +60,7 @@ li a:hover {
   		<li><a class="active" href="home.php">Home</a></li>
   		<li><a href="info.php">Info</a></li>
   		<li><a href="#contact">Rezervimet</a></li>
-  		<li><a href="#about">Orari i fluturimeve</a></li>
+  		<li><a href="orari_fluturimeve.php">Orari i fluturimeve</a></li>
   		<li><a href="#about">Login</a></li>
 
 	</ul>

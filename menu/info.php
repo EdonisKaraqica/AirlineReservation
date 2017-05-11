@@ -19,7 +19,7 @@ w3IncludeHTML();
 
 .image{border-style: solid;height:45%;width:90%;position: fixed; left:5%; top :12%;}
 
-.text {border-style: solid;height:25%;width:90%;position: fixed; left:5%; top :60%;}
+.text {border-style: solid;height:25%;width:90%;position: fixed; left:5%; top :60%;font-size: 50px;text-align: center;}
 
 </style>
 </head>
@@ -32,7 +32,7 @@ w3IncludeHTML();
 </div>
 
 <div class="text">
-Text ..........
+TEXT
 </div>
 </div>
 
