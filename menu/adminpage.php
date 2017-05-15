@@ -1,4 +1,7 @@
-<?php ?>
+<?php 
+include "head_menu.php";
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,16 +9,10 @@
 
 <body>
 
-<div w3-include-html="head_menu.php"></div> 
-<div w3-include-html="footer.php"></div> 
-
-<script>
-w3IncludeHTML();
-</script>
 
 <style>
 
-#adminpage {float: left;border-style: solid;width: 100%;position: relative; }
+#adminpage {float: left;border-style: solid;width: 100%;position: relative; z-index: -1;}
 .admin {}
 
 .links {height:80%;width:15%;position: fixed; left:5%; top :12%;}
@@ -33,6 +30,7 @@ div.vertical-line{
       height: 76%;  
       background-color: black;
       position: fixed;
+	  z-index:-1;
     }
 
 </style>
@@ -80,5 +78,7 @@ div.vertical-line{
 
 </div>
 
-
+<?php
+include "footer.php";
+?>
 </body>

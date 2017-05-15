@@ -1,22 +1,24 @@
 
-<?php ?>
+<?php 
+include "head_menu.php";
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <script src="https://www.w3schools.com/lib/w3data.js"></script>
 
+
+
 <body>
 
-<div w3-include-html="head_menu.php"></div> 
-<div w3-include-html="footer.php"></div> 
 
 <script>
 w3IncludeHTML();
 </script>
-
 <style>
 
-#homepage {float: left;border-style: solid;width: 100%;position: relative; }
+#homepage {float: left;border-style: solid;width: 100%;position: relative;z-index: -1; }
 
 .mySlides{border-style: solid;height:45%;width:90%;position: fixed; left:5%; top :12%;}
 
@@ -29,6 +31,7 @@ w3IncludeHTML();
 
 
 </style>
+
 </head>
 <body>
 
@@ -95,6 +98,9 @@ function showSlides() {
 
 
 </style>
+<?php
+include "footer.php";
+?>
 </body>
 </head>
 </html>
