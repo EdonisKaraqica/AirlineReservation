@@ -18,7 +18,7 @@ w3IncludeHTML();
 
 #homepage {float: left;border-style: solid;width: 100%;position: relative; }
 
-.slideshow{border-style: solid;height:45%;width:90%;position: fixed; left:5%; top :12%;}
+.mySlides{border-style: solid;height:45%;width:90%;position: fixed; left:5%; top :12%;}
 
 .pic1 {border-style: solid;height:25%;width:28.5%;position: fixed; left:5%; top :60%;}
 
@@ -33,32 +33,30 @@ w3IncludeHTML();
 <body>
 
 <div id="homepage">
-<div class="slideshow">
 
 <div class="mySlides fade">
-   <img src="air.jpg" style="width:50%;height: 50%">
-</div>
-
-<div class="mySlides fade">
-  <img src="air.jpg" style="width:28.5%;height: 45%">
+   <img src="air.jpg" style="width:100%;height: 100%">
 </div>
 
 <div class="mySlides fade">
-  <img src="http://wallpapercave.com/wp/7Unu9SU.jpg" style="width:28.5%;height: 45%">
+  <img src="air.jpg" style="width:100%;height: 100%">
 </div>
 
+<div class="mySlides fade">
+  <img src="http://wallpapercave.com/wp/7Unu9SU.jpg" style="width:100%;height: 100%">
 </div>
+
 
 	<div class="pic1">
-		  <img src="http://wallpapercave.com/wp/7Unu9SU.jpg" style="width:100%;height: 100%;object-fit: contain">
+		  <img src="http://wallpapercave.com/wp/7Unu9SU.jpg" style="width:100%;height: 100%;">
 	</div>
 
 	<div class="pic2">
-		<img src="http://wallpapercave.com/wp/7Unu9SU.jpg" style="width:100%;height: 100%;object-fit: contain">
+		<img src="http://wallpapercave.com/wp/7Unu9SU.jpg" style="width:100%;height: 100%;">
 	</div>
 
 	<div class="pic3">
-		<img src="http://wallpapercave.com/wp/7Unu9SU.jpg" style="width:100%;height: 100%;object-fit: contain">
+		<img src="http://wallpapercave.com/wp/7Unu9SU.jpg" style="width:100%;height: 100%;">
 	</div>
 
 </div>

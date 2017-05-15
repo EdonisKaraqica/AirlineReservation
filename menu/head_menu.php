@@ -35,7 +35,7 @@ li a:hover {
 
 .foto_icon{width:3%;position: absolute;}
 
-.title{width:10%;height:50px;position: fixed; left:4%; top :4%;}
+.title{padding-left: 4%; width:10%;height:50px;position: fixed; top :4%;}
 
 .menu_f{width:50%;position: fixed; left:63%;}
 
