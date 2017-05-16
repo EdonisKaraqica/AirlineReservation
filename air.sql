@@ -246,6 +246,32 @@ ALTER TABLE public.shteti
 
 -- DROP TABLE public.shteti;
 
+
+CREATE TABLE public.transaksioni
+(
+    transaksioni_id integer NOT NULL,
+    data_rezervimit date NOT NULL,
+    pasagjeri_id integer NOT NULL,
+    orari_id integer NOT NULL,
+    konfirmimi boolean NOT NULL,
+    zbritja_id integer,
+    denimi_id integer,
+    totali double precision NOT NULL,
+    CONSTRAINT transaksioni_pkey PRIMARY KEY (transaksioni_id),
+    CONSTRAINT transaksioni_orari_id_fkey FOREIGN KEY (orari_id)
+        REFERENCES public.orari_fluturimeve (id_fluturimi) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.transaksioni
+    OWNER to postgres;
+
+
 CREATE TABLE public.shteti
 (
     shteti_id integer NOT NULL,
