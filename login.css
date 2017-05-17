@@ -19,6 +19,21 @@ button {
     cursor: pointer;
     width: 100%;
 }
+
+.btn1 {
+	background-color: #101f10;
+	opacity:0.5;
+    color: white;
+	padding: 0px;
+    margin: 15px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.btn1:hover{
+	color:white;
+}
+
 a.hover{ background-color:#321 ;}
 button:hover {
     opacity: 0.8;
@@ -44,7 +59,7 @@ img.avatar {
     
 }
 
-.container {
+.container1 {
     padding: 16px;
 }
 
