@@ -53,16 +53,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li>
-                        <a href="services.html">Info</a>
+                        <a href="info.php">Info</a>
                     </li>
                     <li>
-                        <a href="contact.html">Rezervimet</a>
+                        <a href="rezervimet.php">Rezervimet</a>
                     </li>
 					<li>
-                        <a href="contact.html">Orari i fluturimeve</a>
+                        <a href="">Orari i fluturimeve</a>
                     </li>
 					<li>
 <button class="btn1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
