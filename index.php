@@ -1,3 +1,4 @@
+
 <?php 
 ?>
 <!DOCTYPE html> 
@@ -53,16 +54,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li>
-                        <a href="services.html">Info</a>
+                        <a href="info.php">Info</a>
                     </li>
                     <li>
-                        <a href="contact.html">Rezervimet</a>
+                        <a href="rezervimet.php">Rezervimet</a>
                     </li>
 					<li>
-                        <a href="contact.html">Orari i fluturimeve</a>
+                        <a href="orari.php">Orari i fluturimeve</a>
                     </li>
 					<li>
 <button class="btn1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
@@ -70,7 +71,7 @@
 
 <div id="id01" class="modal"  >
   
-  <form class="modal-content animate" action="/action_page.php" ">
+  <form class="modal-content animate" action="Kycu.php" method="post" >
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="http://www.clipartbest.com/cliparts/aTq/zgA/aTqzgAzXc.png" alt="Avatar" class="avatar">
@@ -78,13 +79,13 @@
 
     <div class="container1">
       <label><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" name="username" required>
 
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit">Kyçu</button>
-	  <button onclick="window.location.href='regjistrohu.php'">Regjistrohu</button>
+      <button class="btn2" type="submit">Kyçu</button>
+	  <button class="btn2" onclick="window.location.href='regjistrohu.php'">Regjistrohu</button>
 	  
       <input type="checkbox" checked="checked"> Remember me
     </div>
@@ -149,7 +150,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Welcome to Modern Business
+                    Kosova Airlines
                 </h1>
             </div>
             <div class="col-md-4">
@@ -191,36 +192,36 @@
         <!-- Portfolio Section -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Portfolio Heading</h2>
+                <h2 class="page-header">Ofertat</h2>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="images/foto1.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="images/foto2.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="images/foto1.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="images/foto1.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="images/foto1.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="images/foto1.png" alt="">
                 </a>
             </div>
         </div>
