@@ -76,13 +76,13 @@ Insert into reservations(ID_User,ID_Flights,SeatRreserved,Pay,OptionPay) values(
      ID_Reservation int,
      Confirm bool,
      Primary key (ID_Confirm),
-     Foreign key (ID_Reservation) references reservation (ID_Reservation)
+     Foreign key (ID_Reservation) references reservations (ID_Reservation)
  );
  
- Insert into confirm_reservation(ID_Reservation,Confirm)values (1,1);
- Insert into confirm_reservation(ID_Reservation,Confirm)values (1,0);
- Insert into confirm_reservation(ID_Reservation,Confirm)values (2,1);
- Insert into confirm_reservation(ID_Reservation,Confirm)values (4,1);
+ Insert into confirm_reservation(ID_Reservation,Confirm)values (2,'0');
+ Insert into confirm_reservation(ID_Reservation,Confirm)values (1,'1');
+ Insert into confirm_reservation(ID_Reservation,Confirm)values (4,'1');
+ Insert into confirm_reservation(ID_Reservation,Confirm)values (3,'1');
 
    
      
