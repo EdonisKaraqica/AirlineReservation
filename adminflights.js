@@ -122,50 +122,58 @@
     });
 });
 
-$(document).ready(function(){
-     // var values = $(this).serialize();
 
-     // $.ajax({
-     //            url: "flights.php?f=findUser",
-     //            type: "post",
-     //            data: values ,
-     //            success: function (response) {
 
-        $(".asd").focusout(function(){ 
-            // $.ajax({url: "flights.php?f=findUser", method:"GET", success: function(result){
-          
-           var jsonObj = $.parseJSON('[' + result + ']');
-            $(".qwe").html("username");
-                 
-                // }
 
+
+ $(document).ready(function(){
+ $("#searchBy").click(function(event){
+       var values = $(this).serialize();
+
+         $.ajax({
+                url: "flights.php?f=searchBy",
+                type: "post",
+                data: values ,
+                success: function (response) {          
+           var jsonObj = $.parseJSON('[' + response + ']');
+            $(".table").html(
+                        "<thead bgcolor = #508ff4><tr><th>"+"Data e fluturimit"+
+                        "</th><th>"+"Nisja"+
+                        "</th><th>"+"Mberritja"+
+                        "</th><th>"+"Airporti"+
+                        "</th><th>"+"Destinacioni"+
+                        "</th><th>"+"Route Code"+
+                        "</th><th>"+"Çmimi"+
+                        "</th></tr></thead><tr></tr>");
+             for(var i = 0; i< jsonObj[0].length; i++){
+                        
+            $(".table").append("<tr><th>"+
+                jsonObj[0][i]['data_fluturimit']+
+                "</th><th> " +
+                jsonObj[0][i]['nisja']+
+                "</th><th>" +
+                jsonObj[0][i]['mberritja']+
+                "</th><th>" +
+                jsonObj[0][i]['airoporti']+
+                "</th><th>" +
+                jsonObj[0][i]['destinacioni']+
+                "</th><th>" +
+                jsonObj[0][i]['routecode']+
+                "</th><th>" +
+                jsonObj[0][i]['qmimi']+
+
+                "</th></tr>" ); 
          
-            // });
-        });
- //   };
- //   });
+             }
+
+                }
+
+         });
+
+         event.preventDefault();
+
+
+
+        
+    });  
 });
-
-// $(document).ready(function(){
-//     $("div").focusout(function(){
-//         $(this).css("background-color", "#FFFFFF");
-//     });
-// });
-
-
-//  $(document).ready(function(){
-//  $("#deleteU").click(function(){
-//        var values = $(this).serialize();
-
-//          $.ajax({
-//                 url: "users.php?f=deleteUser",
-//                 type: "post",
-//                 data: values ,
-//                 success: function (response) {
-                 
-//                 }
-
-
-//             });
-//     });  
-// });

@@ -19,7 +19,6 @@
 <style>
 
 #adminpage {float: left;;width: 100%;position: relative; z-index: -1;}
-.admin {}
 
 .links {height:80%;width:15%;position: fixed; left:5%; top :12%;}
 
@@ -52,12 +51,12 @@ div.vertical-line{
 
 	<div class="links">
 
-	<form id=#search>
+	<form id=searchBy >
  <label>Search by:</label> <input list="dataType" name="dataType">
   <datalist id="dataType">
-    <option value="Route Code">
-    <option value="Airporti">
-    <option value="Destinacioni">
+    <option value="airoporti">
+    <option value="destinacioni">
+    <option value="routecode">
   </datalist>
 
 
@@ -65,14 +64,16 @@ div.vertical-line{
 
 
 		<label>Value:   </label> <input type="text" name="value" > 
-        <input type="submit" name="submit" value="Search flight"> <br><br>
-</form>
+
+  <input type="submit"  value="Search flight" >
+
+</form><br>
 
 
 
-  	<p><input type="button" id="flights" value="All flights" /></p>
+  	<input type="button" id="flights" value="All flights" /><br>
 
-	<p><input type="button" id="reservations" value="All reservations" /></p>
+	<input type="button" id="reservations" value="All reservations" /><br>
 
 	<p><input type="button" id="users" value="All users" /></p>
 
