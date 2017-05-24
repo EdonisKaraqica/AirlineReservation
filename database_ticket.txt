@@ -2,7 +2,7 @@ create database TicketReservation;
 
 create table users 
 (
-    ID_User bigserial not null primary key,
+    ID_User bigserial not null,
     User_Type text,
     UserName text default 'user',
     FirstName text,
