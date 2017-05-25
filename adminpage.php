@@ -1,7 +1,3 @@
-<?php 
-	//include "header.php";
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +20,9 @@
 
 .tabela {height:80%;width:76%;position: fixed; left:22%; top :12%;}
 
+input {
+	width: 120px;
+}
 
 table, th, td {
     border: 1px solid black;
@@ -54,9 +53,9 @@ div.vertical-line{
 	<form id=searchBy >
  <label>Search by:</label> <input list="dataType" name="dataType">
   <datalist id="dataType">
-    <option value="airoporti">
-    <option value="destinacioni">
-    <option value="routecode">
+    <option value="placeto"> </option>
+    <option value="placefrom"> </option>
+
   </datalist>
 
 
@@ -65,37 +64,21 @@ div.vertical-line{
 
 		<label>Value:   </label> <input type="text" name="value" > 
 
-  <input type="submit"  value="Search flight" >
+ 	<p><input type="submit"  value="Search flight" ></p>
 
-</form><br>
+</form>
 
 
 
-  	<input type="button" id="flights" value="All flights" /><br>
+	<p><input type="button" id="flights" value="All flights" /></p>
 
-	<input type="button" id="reservations" value="All reservations" /><br>
+	<p><input type="button" id="reservations" value="All reservations" /></p>
 
 	<p><input type="button" id="users" value="All users" /></p>
 
-	<p><input type="button" id="addFlight" value="Add flight" /></p>
-
-	<p><input type="button" id="deleteflight" value="Delete flight" /></p>
-
-
-<p> User ID:<input id="asd"  type="text"></p>
-
-<p> Username:<input id="qwe"  type="text"></p>
 
 
 
-
-
-		<p>*<a href="#flights">All flights</a></p>
-		<p>*<a href="#reservationsTable">All reservations</a></p>
-		<p>*<a href="#usersTable">All users</a></p>
-		<p>*<a href="#addFlight">Add flight</a></p>
-		<p>*<a href="#">Update flight</a></p>
-		<p>*<a href="#">Delete flight</a></p>
 	</div>
 
 	<div class="vertical-line">
@@ -103,12 +86,16 @@ div.vertical-line{
 	</div>
 
 				<div class="container"> 
-	<div class="tabela">          
+	<div class="tabela"> 
+	<form id="add">        
 	<table  class = "table table-bordered" style="width: 100%" >
 
-  </table>
+  	</table>
+	</form> 
+
 </div>
 	</div>
+
 
 </div>
 
