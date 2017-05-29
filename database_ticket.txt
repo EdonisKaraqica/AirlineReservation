@@ -14,6 +14,8 @@ create table users
 	Primary key (ID_User)
 );
 
+ALTER TABLE users ALTER COLUMN UserName SET DEFAULT 'user';
+
  Insert into users(User_Type,UserName,FirstName,LastName,Address,Email,Hash_Password) values('admin','TIM','triumf','maqedonci', 'prishtine','triumf_m@hotmail.com','12344321');
  Insert into users(UserName,FirstName,LastName,Address,Email,Hash_Password) values('TIM','triumf','maqedonci', 'prishtine taslixhe','triumf_m@hotmail.com','12344321');
  Insert into users(UserName,FirstName,LastName,Address,Email,Hash_Password) values('EDO','edonis','karaqica', 'prishtine emshir','edonis_k@hotmail.com','12344321');
