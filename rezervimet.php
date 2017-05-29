@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+	<script src="rezervimet.js"></script>
 <style>
 
 		/*div#header, div#footer 
@@ -13,16 +17,18 @@
 		{
     		
     		padding: 10px;
-    		background-color: lightgrey;
+    		background-color: #fcfcfc;
     		position: relative;
+    		width:80%;
+    		margin:200px;
 		}
 
 		div.article 
 		{
-   			margin: 5px;
+   			margin: 20px;
     		padding: 10px;
     		background-color: transparent;
-    		width:40%;
+    		width:35%;
     		position: absolute;
 		}
 		div.article1
@@ -30,9 +36,10 @@
    			margin: 5px;
     		padding: 10px;
     		background-color: transparent;
-    		width:40%;
+    		width:35%;
     		position: relative;
-    		margin-left: 50%;
+    		margin-left: 400px;
+    		margin-top: 20px;
 		}
 		div.tabela_rezervimeve
 		{
@@ -60,7 +67,7 @@
 
 
 		<div id="menu">
-			<!-- <?php include '';?>  -->
+			<?php include 'header.php';?> 
 		</div>
 
 		<div id="content">
@@ -72,7 +79,7 @@
 			</div>
 		<div class="article">
 			<h2>Rezervo nga:</h2>
- 			<form method="get" action="rezervimet.php">
+ 			<form id="rezerv" >
  				<table>
  					<tr>
  						<td>
@@ -83,11 +90,11 @@
  						</td>
  					</tr>
  					<tr >
- 						<td style="padding-top:15px">
- 							<input type="date" name="dita_nisjes" style="width:125px">
+ 						<td style="padding-top:15px;">
+ 							<input type="date" name="dita_nisjes" data-date="" data-date-format="YYYY-MMMM DD" value="2017-10-10" style="width:130px;" >
  						</td>
  						<td style="padding-top:15px; ">
- 							<input type="number" name="Ndite+-" style="width:50px;margin-left:10px;" min="-7" max="7";>
+ 							<input type="number" name="Ndite+-" style="width:50px;margin-left:10px;" min="-7" max="7" value="0" >
  						</td>
  					</tr>
  					<tr>
@@ -98,14 +105,13 @@
  					<tr>
  						<td>
  							<select style="width:125px">
- 								<!-- Mbushe nga DB me vlera  -->
   								<option value="ngaDB">Elementi1</option>
 							</select>
  						</td>
  					</tr>
 
  				</table>
- 				
+ 				<button  class="btn1"  style="width: 100px;" ;>Kerko</button> 
  			</form>
 		</div>
 
@@ -127,7 +133,7 @@
  					</tr>
  					<tr >
  						<td style="padding-top:15px">
- 							<input type="date" name="dita_kthimit" style="width:125px">
+ 							<input type="date" name="dita_kthimit" style="width:130px">
  						</td>
  						<td style="padding-top:15px; ">
  							<input type="number" name="Kdite+-" style="width:50px;margin-left:10px;" min="-7" max="7";>
@@ -151,19 +157,12 @@
  				
  			</form>
 		</div>
+		<!-- <button type="submit" class="btn1" style="width: 100px;">Kerko</button>  -->
 
 		<div id="tabela_rezervimeve">
 			<!-- ME DataBaze -->
-			<table id="tabela1">
-				<tr>
-					<th>Data e nisjes</th>
-					<th>Ora e nisjes</th>
-					<th>Vendi nisjes</th>
-					<th>Mberritja </th>
-					<th>Destinacioni</th>
-					<th>Aeiroplani</th>
-					</tr>
-				</tr>
+			<table class="tabela1"> 
+
 			</table>
 
 		</div>
@@ -178,4 +177,7 @@
 
 	</body>
 
+
+
+	
 </html>
