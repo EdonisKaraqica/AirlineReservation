@@ -1,5 +1,5 @@
 
-      $(document).ready(function(){ //
+      $(document).ready(function(){
        $("#flights").click(function(event){
 
             $.ajax({url: "flights.php?f=getAdminFlights", method:"GET", success: function(result){
@@ -16,11 +16,21 @@
                                 "</th><th>"+"Data e mberritjes"+
                                 "</th><th>"+"Koha e mberritjes"+
                                 "</th><th>"+"Çmimi"+
-                                "</th></tr></thead><tr></tr>");
+                                "</th></tr></thead><tr><th><input type='submit' value='Add new flight'>"+
+                 "</th><th>"+'<input type="number" name="aircraftnr" >'+
+                 "</th><th>"+'<input type="number" name="capacity" >'+
+                 "</th><th>"+'<input type="text" name="placefrom" >'+
+                 "</th><th>"+'<input type="text" name="placeto" >'+
+                 "</th><th>"+'<input type="date" name="departuredate" >'+
+                 "</th><th>"+'<input type="time" name="departuretime" >'+
+                 "</th><th>"+'<input type="date" name="arrivaldate" >'+
+                 "</th><th>"+'<input type="time" name="arrivaltime" >'+
+                 "</th><th>"+'<input type="number" step="0.01" name="priceticket">'+
+                 "</th></tr>");
 
                  for(var i = 0; i< jsonObj[0].length; i++){
                                 
-                    $(".table").append("<tr><th>"+'<input type="radio" name="vehicle" value="Bike">'+
+                     $(".table").append("<tr><th>"+'<input type="radio" name="radios" value='+i+'>'+
                         jsonObj[0][i]['id_flights']+
                         "</th><th> " +
                         jsonObj[0][i]['aircraftnr']+
@@ -45,18 +55,51 @@
                  
                      }
 
-             $(".table").append(
-                 "<tr><th>"+'<input type="submit" value="Add new flight">'+
-                 "</th><th>"+'<input type="number" name="aircraftnr" >'+
-                 "</th><th>"+'<input type="number" name="capacity" >'+
-                 "</th><th>"+'<input type="text" name="placefrom" >'+
-                 "</th><th>"+'<input type="text" name="placeto" >'+
-                 "</th><th>"+'<input type="date" name="departuredate" >'+
-                 "</th><th>"+'<input type="time" name="departuretime" >'+
-                 "</th><th>"+'<input type="date" name="arrivaldate" >'+
-                 "</th><th>"+'<input type="time" name="arrivaltime" >'+
-                 "</th><th>"+'<input type="number" name="priceticket" >'+
-                 "</th></tr>"+"<tr><th>"+'<button id="delete" >Delete selected flight</button></th></tr>');
+                              $("#add").on("submit",function(event) { 
+                var values = $(this).serialize();
+                $.ajax({
+
+                        url: "flights.php?f=addFlight",
+                        type: "post",
+                        data: values ,
+                        success: function (response) {
+
+                            alert("New flight added!");
+                         }
+                     });
+
+                event.preventDefault();
+            });
+
+
+
+             $("#delete").html("<input type='submit' style=' width:200px;'  value='Delete selected flight' >");
+             $("#delete").on("submit",function(event) { 
+                    event.preventDefault();
+                    var selected = {};
+                for (var i = jsonObj[0].length - 1; i >= 0; i--) {
+                    if (document.getElementsByName('radios')[i].checked) {
+                        selected = jsonObj[0][i]['id_flights'];
+                          // console.log(jsonObj[0][i]['id_flights']);
+                    }
+                };
+              
+                $.ajax({
+                        url: "flights.php?f=deleteFlight",
+                        type: "post",
+                        data: {"id":selected},
+                        success: function (response) {
+
+
+                            alert("Flight deleted!");
+                         }
+                     });
+                    
+                });
+
+
+
+
 
 
 
@@ -72,9 +115,8 @@
         });
 
          $(document).ready(function(){
-         $( "#add" ).on( "submit", function( event ) { 
+         $("#add").on("submit",function(event) { 
                 var values = $(this).serialize();
-                console.log(values);
                 $.ajax({
 
                         url: "flights.php?f=addFlight",
@@ -89,6 +131,8 @@
                 event.preventDefault();
             });
           });
+
+
 
          $(document).ready(function(){
             $("#reservations").click(function(){

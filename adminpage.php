@@ -51,12 +51,12 @@ div.vertical-line{
 	<div class="links">
 
 	<form id=searchBy >
- <label>Search by:</label> <input list="dataType" name="dataType">
-  <datalist id="dataType">
-    <option value="placeto"> </option>
-    <option value="placefrom"> </option>
-
-  </datalist>
+ <label>Search by:</label>
+  <select name ="dataType"> 
+    <option value="placeto"> Place to </option>
+    <option value="placefrom"> Place from</option>
+</select>
+  
 
 
 <br>
@@ -92,7 +92,9 @@ div.vertical-line{
 
   	</table>
 	</form> 
-
+	<form id="delete">
+		
+	</form>
 </div>
 	</div>
 

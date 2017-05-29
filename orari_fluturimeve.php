@@ -39,7 +39,7 @@ table, th, td {
 	</div>
 
 	<div class="titulli">
-		Orari i fluturimeve
+	<font face="verdana" >	Orari i fluturimeve</font>
 
 	</div>
 </div>
