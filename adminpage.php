@@ -18,7 +18,9 @@
 
 .links {height:80%;width:15%;position: fixed; left:5%; top :12%;}
 
-.tabela {height:80%;width:76%;position: fixed; left:22%; top :12%;}
+.tabela {height:80%;width:76%;position: fixed; left:22%; top :12%; overflow-y: scroll;}
+
+.deletebutton{top:93%;left:22%;position: fixed;}
 
 input {
 	width: 120px;
@@ -31,9 +33,9 @@ table, th, td {
 }
 
 div.vertical-line{
-	  top : 12%; left: 21%; 
+	  top : 0%; left: 21%; 
       width: 1px; 
-      height: 76%;  
+      height: 100%;  
       background-color: black;
       position: fixed;
 	  z-index:-1;
@@ -91,10 +93,13 @@ div.vertical-line{
 	<table  class = "table table-bordered" style="width: 100%" >
 
   	</table>
-	</form> 
+	</form>
+	</div>
+	 <div class="deletebutton">
 	<form id="delete">
 		
 	</form>
+
 </div>
 	</div>
 

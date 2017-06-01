@@ -1,11 +1,11 @@
 
-      $(document).ready(function(){
-       $("#flights").click(function(event){
+      $(document).ready(function flights(){
+       $("#flights").click(function (event){
 
             $.ajax({url: "flights.php?f=getAdminFlights", method:"GET", success: function(result){
                   
-                  var jsonObj = $.parseJSON('[' + result + ']');
-                         $(".table").html(
+          var jsonObj = $.parseJSON('[' + result + ']');
+             $(".table").html(
                                 "<thead bgcolor = #508ff4><tr><th>"+"Id e fluturimit"+
                                 "</th><th>"+"Aircraft number"+
                                 "</th><th>"+"Kapaciteti"+
@@ -30,7 +30,7 @@
 
                  for(var i = 0; i< jsonObj[0].length; i++){
                                 
-                     $(".table").append("<tr><th>"+'<input type="radio" name="radios" value='+i+'>'+
+                     $(".table").append("<tr><th>"+'<input type="checkbox" name="radios" >'+
                         jsonObj[0][i]['id_flights']+
                         "</th><th> " +
                         jsonObj[0][i]['aircraftnr']+
@@ -55,45 +55,53 @@
                  
                      }
 
-                              $("#add").on("submit",function(event) { 
-                var values = $(this).serialize();
-                $.ajax({
+            //                   $("#add").on("submit",function(event) { 
 
-                        url: "flights.php?f=addFlight",
-                        type: "post",
-                        data: values ,
-                        success: function (response) {
+            //     var values = $(this).serialize();
+            //     $.ajax({
 
-                            alert("New flight added!");
-                         }
-                     });
+            //             url: "flights.php?f=addFlight",
+            //             type: "post",
+            //             data: values ,
+            //             success: function (response) {
 
-                event.preventDefault();
-            });
+            //                 alert('New flight added' );
+                            
+            //              }
+            //          });
+            //  flights();
+            //     event.preventDefault();
+            // });
 
 
 
              $("#delete").html("<input type='submit' style=' width:200px;'  value='Delete selected flight' >");
              $("#delete").on("submit",function(event) { 
                     event.preventDefault();
-                    var selected = {};
+                    var selected ;
+                    var count = 0;
                 for (var i = jsonObj[0].length - 1; i >= 0; i--) {
                     if (document.getElementsByName('radios')[i].checked) {
+                        count++;
                         selected = jsonObj[0][i]['id_flights'];
-                          // console.log(jsonObj[0][i]['id_flights']);
-                    }
-                };
-              
-                $.ajax({
+                         $.ajax({
                         url: "flights.php?f=deleteFlight",
                         type: "post",
                         data: {"id":selected},
                         success: function (response) {
 
 
-                            alert("Flight deleted!");
+                           
                          }
                      });
+                          
+                    }
+                }; 
+                alert(count +" flights deleted!");
+                 flights();
+
+              
+               
                     
                 });
 
@@ -108,14 +116,16 @@
 
 
 
-                    event.preventDefault();
+                    // event.preventDefault();
             });
 
 
         });
 
+
          $(document).ready(function(){
-         $("#add").on("submit",function(event) { 
+                              $("#add").on("submit",function(event) { 
+
                 var values = $(this).serialize();
                 $.ajax({
 
@@ -124,18 +134,22 @@
                         data: values ,
                         success: function (response) {
 
-                            alert("New flight added!");
+                            alert('New flight added' );
+                            
                          }
                      });
-
+             // flights();
                 event.preventDefault();
             });
-          });
+                                });
+
+
+
 
 
 
          $(document).ready(function(){
-            $("#reservations").click(function(){
+            $("#reservations").click(function reservations(){
                 $.ajax({url: "flights.php?f=getReservations", method:"GET", success: function(result){
                   
                     var jsonObj = $.parseJSON('[' + result + ']');
@@ -152,13 +166,12 @@
                                 "</th><th>"+"Numri i uleses"+
                                 "</th><th>"+"Pagesa"+
                                 "</th><th>"+"Menyra e pageses"+
-                                "</th><th>"+"E konfirmuar"+
                                 "</th></tr></thead><tr></tr>");
                      for(var i = 0; i< jsonObj[0].length; i++){
                     
                             
                         
-                    $(".table").append("<tr><th>"+
+                    $(".table").append("<tr><th>"+'<input type="checkbox" name="radios" >'+
                         jsonObj[0][i]['id_reservation']+
                         "</th><th> " +
                         jsonObj[0][i]['firstname']+
@@ -180,12 +193,38 @@
                         jsonObj[0][i]['pay']+
                         "</th><th>" +
                         jsonObj[0][i]['optionpay']+
-                        "</th><th>" +
-                        jsonObj[0][i]['confirm']+
-
                         "</th></tr>" ); 
                  
                      }
+
+            $("#delete").html("<input type='submit' style=' width:200px;'  value='Delete selected reservation' >");
+             $("#delete").on("submit",function(event) { 
+                    event.preventDefault();
+                    var selected = {};
+                    var count = 0;
+                for (var i = jsonObj[0].length - 1; i >= 0; i--) {
+                    if (document.getElementsByName('radios')[i].checked) {
+                        count++;
+                        selected = jsonObj[0][i]['id_reservation'];
+                         $.ajax({
+                        url: "flights.php?f=deleteReservation",
+                        type: "post",
+                        data: {"id":selected},
+                        success: function (response) {
+
+
+                           
+                         }
+                     });
+                          
+                    }
+                };
+                alert(count +" reservations deleted!");
+                reservations();
+              
+               
+                    
+                });
 
 
 
@@ -195,7 +234,7 @@
         });
 
          $(document).ready(function(){
-            $("#users").click(function(){
+            $("#users").click(function users(){
                 $.ajax({url: "flights.php?f=getUsers", method:"GET", success: function(result){
                   
                     var jsonObj = $.parseJSON('[' + result + ']');
@@ -215,7 +254,7 @@
                         
 
                     
-                    $(".table").append("<tr><th>"+
+                    $(".table").append("<tr><th>"+'<input type="checkbox" name="radios" >'+
                         jsonObj[0][i]['id_user']+
                         "</th><th> " +
                         jsonObj[0][i]['user_type']+
@@ -234,6 +273,34 @@
                         "</th></tr>" ); 
                  
                      }
+            $("#delete").html("<input type='submit' style=' width:200px;'  value='Delete selected user' >");
+             $("#delete").on("submit",function(event) { 
+                    event.preventDefault();
+                    var selected = {};
+                    var count = 0;
+                for (var i = jsonObj[0].length - 1; i >= 0; i--) {
+                    if (document.getElementsByName('radios')[i].checked) {
+                        count++;
+                        selected = jsonObj[0][i]['id_user'];
+                         $.ajax({
+                        url: "flights.php?f=deleteUser",
+                        type: "post",
+                        data: {"id":selected},
+                        success: function (response) {
+
+
+                           
+                         }
+                     });
+                          
+                    }
+                }; 
+                alert(count +" users deleted!");
+                users();
+              
+               
+                    
+                });
 
                 }});
             });
