@@ -7,20 +7,7 @@
  	echo "Nuk eksiston";
  }
 
- function getFlights(){ 
 
-
-    require 'db.php';
-
-  	 $query = pg_query($db, "SELECT * FROM flights
-		ORDER BY  DepartureDate ,
-    DepartureTime ;");
-
-  	 $result=pg_fetch_all($query);
-
-
-	 print_r(json_encode($result));
-}
 
  function getAdminFlights(){ 
 
@@ -28,6 +15,22 @@
     require 'db.php';
 
      $query = pg_query($db, "SELECT * FROM flights    ORDER BY  DepartureDate ,  DepartureTime ;");
+
+     $result=pg_fetch_all($query);
+
+
+   print_r(json_encode($result));
+}
+
+
+ function getFlights(){ 
+
+
+    require 'db.php';
+
+     $query = pg_query($db, "SELECT * FROM flights
+    ORDER BY  DepartureDate ,
+    DepartureTime ;");
 
      $result=pg_fetch_all($query);
 
@@ -110,10 +113,7 @@
    require 'db.php';
 
 
-        //  $id_flights = 1; 
-        // $id_reservation =pg_query($db, "SELECT ID_Reservation from reservations WHERE id_flights = $id_flights");
-        // $all_id=pg_fetch_all($id_reservation);
-        // print_r($all_id);
+        
 
 
        $id_flights = $_POST['id']; 
@@ -129,9 +129,7 @@
 
         $id_reservation = $_POST['id']; 
       
-      $result = pg_query($db, "
-        DELETE FROM confirm_reservation WHERE id_reservation = $id_reservation;
-        DELETE FROM reservations WHERE id_reservation = $id_reservation");
+      $result = pg_query($db, "DELETE FROM reservations WHERE id_reservation = $id_reservation");
 
  }
 
@@ -140,7 +138,7 @@
 
    require 'db.php';
 
-        $id_user = $_POST['id']; 
+        $id_user =  pg_escape_string($_POST['id']); 
       
       $result = pg_query($db, "DELETE FROM users WHERE id_user = $id_user");
 

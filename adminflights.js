@@ -1,10 +1,13 @@
-
-      $(document).ready(function flights(){
-       $("#flights").click(function (event){
+ $(document).ready(function ff(){
+       $("#flights").click(function flights(event){
 
             $.ajax({url: "flights.php?f=getAdminFlights", method:"GET", success: function(result){
+
+
+
                   
           var jsonObj = $.parseJSON('[' + result + ']');
+          $("#found").html(jsonObj[0].length +" flights found.");
              $(".table").html(
                                 "<thead bgcolor = #508ff4><tr><th>"+"Id e fluturimit"+
                                 "</th><th>"+"Aircraft number"+
@@ -17,20 +20,20 @@
                                 "</th><th>"+"Koha e mberritjes"+
                                 "</th><th>"+"Çmimi"+
                                 "</th></tr></thead><tr><th><input type='submit' value='Add new flight'>"+
-                 "</th><th>"+'<input type="number" name="aircraftnr" >'+
-                 "</th><th>"+'<input type="number" name="capacity" >'+
-                 "</th><th>"+'<input type="text" name="placefrom" >'+
-                 "</th><th>"+'<input type="text" name="placeto" >'+
-                 "</th><th>"+'<input type="date" name="departuredate" >'+
-                 "</th><th>"+'<input type="time" name="departuretime" >'+
-                 "</th><th>"+'<input type="date" name="arrivaldate" >'+
-                 "</th><th>"+'<input type="time" name="arrivaltime" >'+
-                 "</th><th>"+'<input type="number" step="0.01" name="priceticket">'+
-                 "</th></tr>");
+                                 "</th><th>"+'<input type="number" name="aircraftnr" >'+
+                                 "</th><th>"+'<input type="number" name="capacity" >'+
+                                 "</th><th>"+'<input type="text" name="placefrom" >'+
+                                 "</th><th>"+'<input type="text" name="placeto" >'+
+                                 "</th><th>"+'<input type="date" name="departuredate" >'+
+                                 "</th><th>"+'<input type="time" name="departuretime" >'+
+                                 "</th><th>"+'<input type="date" name="arrivaldate" >'+
+                                 "</th><th>"+'<input type="time" name="arrivaltime" >'+
+                                 "</th><th>"+'<input type="number" step="0.01" name="priceticket">'+
+                                 "</th></tr>");
 
                  for(var i = 0; i< jsonObj[0].length; i++){
                                 
-                     $(".table").append("<tr><th>"+'<input type="checkbox" name="radios" >'+
+                     $(".table").append("<tr><th style='padding-left:0%'>"+'<input type="checkbox" name="radios" >'+
                         jsonObj[0][i]['id_flights']+
                         "</th><th> " +
                         jsonObj[0][i]['aircraftnr']+
@@ -55,31 +58,23 @@
                  
                      }
 
-            //                   $("#add").on("submit",function(event) { 
-
-            //     var values = $(this).serialize();
-            //     $.ajax({
-
-            //             url: "flights.php?f=addFlight",
-            //             type: "post",
-            //             data: values ,
-            //             success: function (response) {
-
-            //                 alert('New flight added' );
-                            
-            //              }
-            //          });
-            //  flights();
-            //     event.preventDefault();
-            // });
-
-
 
              $("#delete").html("<input type='submit' style=' width:200px;'  value='Delete selected flight' >");
              $("#delete").on("submit",function(event) { 
                     event.preventDefault();
                     var selected ;
                     var count = 0;
+                    swal({
+                      title: "Are you sure you want to delete selected flights?",
+                      text: "You will not be able to recover deleted flights!",
+                      type: "warning",
+                      showCancelButton: true,
+                      confirmButtonColor: "#DD6B55",
+                      // confirmButtonText: "Yes.",
+                      closeOnConfirm: false
+                    },
+                function(){
+                
                 for (var i = jsonObj[0].length - 1; i >= 0; i--) {
                     if (document.getElementsByName('radios')[i].checked) {
                         count++;
@@ -96,13 +91,19 @@
                      });
                           
                     }
-                }; 
-                alert(count +" flights deleted!");
-                 flights();
+                };
+                if (count>0) {
+                      swal({
+                      title: count+" flights deleted!",
+                      text : "",
+                      timer: 2000,
+                      showConfirmButton: false ,
+                      type :"success"
+                    });
 
-              
-               
-                    
+                      flights();
+               }
+                });    
                 });
 
 
@@ -134,11 +135,17 @@
                         data: values ,
                         success: function (response) {
 
-                            alert('New flight added' );
+                     
                             
                          }
-                     });
-             // flights();
+                     });       swal({
+                      title: "New flight deleted!",
+                      text : "",
+                      timer: 2000,
+                      showConfirmButton: false ,
+                      type :"success"
+                    });
+             flights();
                 event.preventDefault();
             });
                                 });
@@ -153,6 +160,8 @@
                 $.ajax({url: "flights.php?f=getReservations", method:"GET", success: function(result){
                   
                     var jsonObj = $.parseJSON('[' + result + ']');
+
+          $("#found").html(jsonObj[0].length +" reservations found.");
                     $(".table").html(
 
                                 "<thead bgcolor = #508ff4><tr><th>"+"Reservation id"+
@@ -199,6 +208,17 @@
 
             $("#delete").html("<input type='submit' style=' width:200px;'  value='Delete selected reservation' >");
              $("#delete").on("submit",function(event) { 
+              swal({
+                title: "Are you sure you want to delete selected reservations?",
+                text: "You will not be able to recover deleted reservations!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                closeOnConfirm: false
+              },
+              function(){
+               
+              
                     event.preventDefault();
                     var selected = {};
                     var count = 0;
@@ -219,10 +239,18 @@
                           
                     }
                 };
-                alert(count +" reservations deleted!");
+                if (count>0) {
+                  swal({
+                      title: count+" reservations deleted!",
+                      text : "",
+                      timer: 2000,
+                      showConfirmButton: false ,
+                      type :"success"
+                    });
+                 
                 reservations();
-              
-               
+              }
+              }); 
                     
                 });
 
@@ -238,6 +266,8 @@
                 $.ajax({url: "flights.php?f=getUsers", method:"GET", success: function(result){
                   
                     var jsonObj = $.parseJSON('[' + result + ']');
+
+          $("#found").html(jsonObj[0].length +" users found.");
                     $(".table").html(
 
                                 "<thead bgcolor = #508ff4><tr><th>"+"User id"+
@@ -275,6 +305,17 @@
                      }
             $("#delete").html("<input type='submit' style=' width:200px;'  value='Delete selected user' >");
              $("#delete").on("submit",function(event) { 
+              swal({
+                title: "Are you sure you want to delete selected users?",
+                text: "You will not be able to recover deleted users!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                closeOnConfirm: false
+              },
+              function(){
+                
+              
                     event.preventDefault();
                     var selected = {};
                     var count = 0;
@@ -282,6 +323,7 @@
                     if (document.getElementsByName('radios')[i].checked) {
                         count++;
                         selected = jsonObj[0][i]['id_user'];
+                        console.log(selected);
                          $.ajax({
                         url: "flights.php?f=deleteUser",
                         type: "post",
@@ -295,10 +337,17 @@
                           
                     }
                 }; 
-                alert(count +" users deleted!");
+                if (count>0) {
+                swal({
+                      title: count+" users deleted!",
+                      text : "",
+                      timer: 2000,
+                      showConfirmButton: false ,
+                      type :"success"
+                    });
                 users();
-              
-               
+              }
+               });
                     
                 });
 
@@ -308,7 +357,7 @@
  $(document).ready(function(){
     $("#searchBy").on("submit",function(event){
                var values = $(this).serialize();
-               console.log(values);
+               $("#delete").empty();
 
                  $.ajax({
                         url: "flights.php?f=searchBy",
@@ -316,6 +365,8 @@
                         data: values ,
                         success: function (response) {          
                 var jsonObj = $.parseJSON('[' + response + ']');
+
+          $("#found").html(jsonObj[0].length +" flights found.");
                                $(".table").html(
                                 "<thead bgcolor = #508ff4><tr><th>"+"Id e fluturimit"+
                                 "</th><th>"+"Aircraft number"+
@@ -363,3 +414,4 @@
              
             });  
          });
+
