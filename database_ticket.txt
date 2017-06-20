@@ -60,12 +60,12 @@ create table reservations
     Foreign key (ID_Flights) references flights(ID_Flights) 
  );
  
-Insert into reservations(ID_User,ID_Flights,SeatRreserved,OptionPay) values(2,1,1,'cash');
-Insert into reservations(ID_User,ID_Flights,SeatRreserved,OptionPay) values(1,1,1,'cash');
-Insert into reservations(ID_User,ID_Flights,SeatRreserved,OptionPay) values(2,1,1,'cash');
-Insert into reservations(ID_User,ID_Flights,SeatRreserved,OptionPay) values(3,1,1,'paypal');
-Insert into reservations(ID_User,ID_Flights,SeatRreserved,OptionPay) values(2,1,1,'paypal');
-Insert into reservations(ID_User,ID_Flights,SeatRreserved,OptionPay) values(1,1,1,'cash');
+Insert into reservations(ID_User,ID_Flights,Seatreserved,OptionPay) values(2,1,1,'cash');
+Insert into reservations(ID_User,ID_Flights,Seatreserved,OptionPay) values(1,1,1,'cash');
+Insert into reservations(ID_User,ID_Flights,Seatreserved,OptionPay) values(2,1,1,'cash');
+Insert into reservations(ID_User,ID_Flights,Seatreserved,OptionPay) values(3,1,1,'paypal');
+Insert into reservations(ID_User,ID_Flights,Seatreserved,OptionPay) values(2,1,1,'paypal');
+Insert into reservations(ID_User,ID_Flights,Seatreserved,OptionPay) values(1,1,1,'cash');
 
  
 
